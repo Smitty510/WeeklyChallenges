@@ -32,11 +32,11 @@ namespace ChallengesWithTestsMark8
                 {
                     return false;
                 }
-                else
-                {
-                    return true;
-                }
+
             }
+            return true;
+
+
         }
 
         public int SumElementsThatFollowAnEven(int[] numbers)
@@ -53,11 +53,11 @@ namespace ChallengesWithTestsMark8
                 {
                     sum += numbers[i];
                 }
-                else
-                {
-                    return sum;
-                }
+
             }
+            return sum;
+
+
         }
 
         public string TurnWordsIntoSentence(string[] words)
@@ -111,6 +111,7 @@ namespace ChallengesWithTestsMark8
                     }
                 }
             }
+            return false;
         }
     }
 }

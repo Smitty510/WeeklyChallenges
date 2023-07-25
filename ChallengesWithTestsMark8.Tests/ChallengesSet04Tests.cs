@@ -174,7 +174,7 @@ namespace ChallengesWithTestsMark8.Tests
             ChallengesSet04 challenger = new ChallengesSet04();
 
             // Act
-            bool actual = challenger.MajorityOfElementsInArrayAreNull(objects);
+            bool actual = ChallengesSet04.MajorityOfElementsInArrayAreNull(objects);
 
             // Assert
             Assert.Equal(expected, actual);

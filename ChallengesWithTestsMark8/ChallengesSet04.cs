@@ -62,7 +62,7 @@ namespace ChallengesWithTestsMark8
             var amount = objs.Length;
             var majority = (amount / 2) + 1;
 
-            var count = 0
+            var count = 0;
 
             foreach (var obj in objs)
             {
@@ -70,15 +70,16 @@ namespace ChallengesWithTestsMark8
                 {
                     count++;
                 }
-                if (count >= majority)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
             }
+            if (count >= majority)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
         }
 
         public double AverageEvens(int[] numbers)
@@ -106,7 +107,7 @@ namespace ChallengesWithTestsMark8
                 return 0;
             }
 
-            public int Factorial(int number)
+            int Factorial(int number)
             {
                 if (number == 0)
                 {

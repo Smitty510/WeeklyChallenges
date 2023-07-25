@@ -48,6 +48,7 @@ namespace ChallengesWithTestsMark8
             {
                 isPrime = false;
             }
+            return isPrime;
         }
 
         public int IndexOfLastUniqueLetter(string str)
@@ -66,7 +67,7 @@ namespace ChallengesWithTestsMark8
                         uindex = false;
                     }
                 }
-                if (uindex = true)
+                if (uindex == true)
                 {
                     index = i;
                 }
