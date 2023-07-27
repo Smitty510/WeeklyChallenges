@@ -11,9 +11,9 @@ namespace ChallengesWithTestsMark8
 
         public void ChangeNamesOfBusinessesWithNoRevenueTo_CLOSED(Business[] businesses)
         {
-            for (var i = 0; i < businesses.Length; i++)
+            for (int i = 0; i < businesses.Length; i++)
             {
-                if (businesses[i].TotalExpenses == 0)
+                if (businesses[i].TotalRevenue == 0)
                 {
                     businesses[i].Name = "CLOSED";
                 }
@@ -66,22 +66,30 @@ namespace ChallengesWithTestsMark8
             {
                 return "";
             }
-            string sentence = "";
+            int badwords = 0;
+            int goodwords = 0;
+            List<string> wordslist = new List<string>();
 
-            foreach (string word in words)
+            for (int i = 0; i < words.Length; i++)
             {
-                if (word.Trim().Length > 0)
+                if (words[i] == "" || words[i] == " " || words[i] == "  ")
                 {
-                    sentence += word.Trim() + " ";
+                    badwords =+1;
+                }
+                else
+                {
+                    wordslist.Add(words[i].Trim());
+                    goodwords += 1;
                 }
             }
-            if (sentence.Length == 0)
+            if (goodwords == 0)
             {
                 return "";
             }
-            sentence = sentence.Trim();
-            sentence = ".";
-            return sentence;
+            else
+            {
+                return string.Join(" ", wordslist) + ".";
+            }
         }
 
         public double[] GetEveryFourthElement(List<double> elements)

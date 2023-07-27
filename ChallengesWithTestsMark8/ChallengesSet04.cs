@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace ChallengesWithTestsMark8
@@ -59,62 +60,86 @@ namespace ChallengesWithTestsMark8
 
         public bool MajorityOfElementsInArrayAreNull(object[] objs)
         {
-            var amount = objs.Length;
-            var majority = (amount / 2) + 1;
+            return objs.Where(x => x == null).Count() > (objs.Count() /2);
+            //var amount = objs.Length;
+            //var majority = (amount / 2) + 1;
 
-            var count = 0;
+            //var count = 0;
 
-            foreach (var obj in objs)
-            {
-                if (obj == null)
-                {
-                    count++;
-                }
-            }
-            if (count >= majority)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            //foreach (var obj in objs)
+            //{
+            //    if (obj == null)
+            //    {
+            //        count++;
+            //    }
+            //}
+            //if (count >= majority)
+            //{
+            //    return true;
+            //}
+            //else
+            //{
+            //    return false;
+            //}
 
         }
 
         public double AverageEvens(int[] numbers)
         {
-            double sum = 0;
-            double count = 0;
-
-            if (numbers ==null)
+            try
+            {
+                return numbers.Where(x => x % 2 == 0).Average();
+            }
+            catch (ArgumentNullException)
             {
                 return 0;
             }
-            foreach (var num in numbers)
-            {
-                if (num % 2 == 0)
-                {
-                    sum += num;
-                }
-            }
-            if (count > 0)
-            {
-                return sum / count;
-            }
-            else
+            catch (InvalidOperationException)
             {
                 return 0;
             }
+            //double sum = 0;
+            //double count = 0;
 
-            int Factorial(int number)
+            //if (numbers ==null)
+            //{
+            //    return 0;
+            //}
+            //foreach (var num in numbers)
+            //{
+            //    if (num % 2 == 0)
+            //    {
+            //        sum += num;
+            //    }
+            //}
+            //if (count > 0)
+            //{
+            //    return sum / count;
+            //}
+            //else
+            //{
+            //    return 0;
+            //}
+
+        }
+
+        public int Factorial(int number)
+        {
+
+            if (number < 0)
             {
-                if (number == 0)
-                {
-                    return 1;
-                }
-                return number * Factorial(number - 1);
+                throw new ArgumentOutOfRangeException();
             }
+            if (number == 1 || number == 0)
+            {
+                return 1;
+            }
+            if (number >= 2)
+            {
+                var factorial = number * Factorial(number - 1);
+                return factorial;
+            }
+            return 0;
         }
     }
 }

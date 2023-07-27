@@ -45,14 +45,14 @@
         public string GetGreeting(string nameOfPerson)
         {
             return (nameOfPerson == "") ? "Hello!" : $"Hello, {nameOfPerson}!";
-            //if (nameOfPerson == "")
-            //{
-            //    return "Hello!";
-            //}
-            //else
-            //{
-            //    return $"Hello!, " + nameOfPerson + "!";
-            //}
+            if (nameOfPerson == "")
+            {
+                return "Hello!";
+            }
+            else
+            {
+                return $"Hello!, " + nameOfPerson + "!";
+            }
 
         }
 
