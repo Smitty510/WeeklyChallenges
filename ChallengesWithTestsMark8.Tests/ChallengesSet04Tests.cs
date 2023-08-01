@@ -168,13 +168,13 @@ namespace ChallengesWithTestsMark8.Tests
         [InlineData(new object[] { null, null, '!', null, 4 }, true)]
         [InlineData(new object[] { null, false, null, null, '!', null, 4 }, true)]
         [InlineData(new object[] { null, null, new int[] { }, false, null, null, '!', null, 4 }, true)]
-        public void MajorityOfElementsInArrayAreNull(object[] objects, bool expected)
+        public void MajorityOfElementsInArrayAreNull(object[] objs, bool expected)
         {
             // Arrange
             ChallengesSet04 challenger = new ChallengesSet04();
 
             // Act
-            bool actual = ChallengesSet04.MajorityOfElementsInArrayAreNull(objects);
+            bool actual = challenger.MajorityOfElementsInArrayAreNull(objs);
 
             // Assert
             Assert.Equal(expected, actual);
